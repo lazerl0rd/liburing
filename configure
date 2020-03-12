@@ -9,7 +9,11 @@ else
     TMPDIR1="/tmp"
 fi
 
-cc=gcc
+if test ! -z "$CC" ; then
+    cc="${CC}"
+else
+    cc=gcc
+fi
 
 for opt do
   optarg=$(expr "x$opt" : 'x[^=]*=\(.*\)')
@@ -110,7 +114,11 @@ print_config() {
 }
 
 # Default CFLAGS
-CFLAGS="-D_GNU_SOURCE -include config-host.h"
+if test ! -z "$CFLAGS" ; then
+    CFLAGS="-D_GNU_SOURCE -include config-host.h"" ""${CFLAGS}"
+else
+    CFLAGS="-D_GNU_SOURCE -include config-host.h"
+fi
 BUILD_CFLAGS=""
 
 # Print configure header at the top of $config_host_h

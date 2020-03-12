@@ -70,15 +70,30 @@ fi
 if test "$show_help" = "yes"; then
 cat <<EOF
 
-Usage: configure [options]
-Options: [defaults in brackets after descriptions]
+Usage: $0 [OPTION]... [VAR=VALUE]...
+
+To assign environment variables (e.g., CC, CFLAGS...), specify them as
+VAR=VALUE.  See below for descriptions of some of the useful variables.
+
+Defaults for the options are specified in brackets.
+
+Configuration:
   --help                   print this message
+
+Installation directories:
   --prefix=PATH            install in PATH [$prefix]
   --includedir=PATH        install headers in PATH [$includedir]
   --libdir=PATH            install runtime libraries in PATH [$libdir]
   --libdevdir=PATH         install developement libraries in PATH [$libdevdir]
   --mandir=PATH            install man pages in PATH [$mandir]
   --datadir=PATH           install shared data in PATH [$datadir]
+
+Some influential environment variables:
+  CC          C compiler command
+  CFLAGS      C compiler flags
+
+Use these variables to override the choices made by 'configure' or to help
+it to find libraries and programs with nonstandard names/locations.
 EOF
 exit 0
 fi
